@@ -1,6 +1,6 @@
 function sectionInViewPort(elem) {
   let sPosition = elem.getBoundingClientRect();
-  return sPosition.top >= 0;
+  return sPosition.top > -300 && sPosition.top <= 270 ;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
