@@ -34,11 +34,13 @@ document.addEventListener("scroll", () => {
     if (sectionInViewPort(allSections[i])) {
       if (!allSections[i].classList.contains("your-active-class")) {
         allSections[i].classList.add("your-active-class");
-        document.querySelector(`[data-bar=${allSections[i].id}]`).style.backgroundColor="red"
+        document.querySelector(`[data-bar=${allSections[i].id}]`).style.backgroundColor="red";
+        links[i].classList.add("your-active-class");
       }
     } else {
       allSections[i].classList.remove("your-active-class");
-      document.querySelector(`[data-bar=${allSections[i].id}]`).style.backgroundColor="white"
+      document.querySelector(`[data-bar=${allSections[i].id}]`).style.backgroundColor="white";
+      links[i].classList.remove("your-active-class");
     }
   }
 });
