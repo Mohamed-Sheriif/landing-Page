@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const link = document.createElement("a");
     link.classList = "menu__link";
     link.innerHTML = allSections[i].dataset.nav;
-    link.dataset.nav = allSections[i].id;
+    link.dataset.bar = allSections[i].id;
     //creating list to append liks to it
     const list = document.createElement("li");
     list.appendChild(link);
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".menu__link");
   links.forEach((item) => {
     item.addEventListener("click", () => {
-      const el = document.querySelector(`#${item.getAttribute("data-nav")}`);
+      const el = document.querySelector(`#${item.getAttribute("data-bar")}`);
       el.scrollIntoView({ behavior: "smooth", block: "center" });
     });
   });
