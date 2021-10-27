@@ -1,6 +1,6 @@
 function sectionInViewPort(elem) {
   let sPosition = elem.getBoundingClientRect();
-  return sPosition.top > -300 && sPosition.top <= 270 ;
+  return (sPosition.top < (window.innerHeight)/2) && (sPosition.top > -200) ;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,9 +34,11 @@ document.addEventListener("scroll", () => {
     if (sectionInViewPort(allSections[i])) {
       if (!allSections[i].classList.contains("your-active-class")) {
         allSections[i].classList.add("your-active-class");
+        document.querySelector(`[data-bar=${allSections[i].id}]`).style.backgroundColor="red"
       }
     } else {
       allSections[i].classList.remove("your-active-class");
+      document.querySelector(`[data-bar=${allSections[i].id}]`).style.backgroundColor="white"
     }
   }
 });
